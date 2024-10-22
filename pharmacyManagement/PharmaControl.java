@@ -9,7 +9,7 @@ public class PharmaControl {
     public void addToInventory(Pharmaceutical medicine) {
 
         if (Inventorycount >= pharmaceutical.length){
-            System.out.println("Inventory is full");
+            System.out.println("Cannot add this medicine. Inventory is full");
             return;
         }
         for (int i = 0; i < Inventorycount; i++) {
