@@ -15,6 +15,7 @@ public class PharmaControl {
         for (int i = 0; i < Inventorycount; i++) {
             if(pharmaceutical[i].IsEquivalent(medicine)){
                 System.out.println("Medicine already exists");
+                return;
             }
 
         }
@@ -27,8 +28,12 @@ public class PharmaControl {
 
     public void removeFromInventory(String medicine) {
         for (int i = 0; i < Inventorycount; i++) {
-            if(pharmaceutical[i].getMedName().equalsIgnoreCase(medicine)){
-                pharmaceutical[i] = null;
+            if(pharmaceutical[i] != null && pharmaceutical[i].getMedName().equalsIgnoreCase(medicine)){
+                for (int j = i; j < Inventorycount -1; j++) {
+                    pharmaceutical[j] = pharmaceutical[j+1];
+//                    Inventorycount--;
+                }
+                pharmaceutical[Inventorycount-1] = null;
                 Inventorycount--;
                 System.out.println("Medicine removed");
                 return;
@@ -72,10 +77,15 @@ public class PharmaControl {
             }
         else{
             for(int i = 0; i < Inventorycount; i++){
-                pharmaceutical[i].displaySpec();
-                System.out.println("-------------------");
+                if(pharmaceutical[i] != null) {
+                    pharmaceutical[i].displaySpec();
+                    System.out.println("-------------------");
+                }
+
             }
+
             }
+
 
 
 
