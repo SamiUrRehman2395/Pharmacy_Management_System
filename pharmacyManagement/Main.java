@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Antibiotic amoxilin = new Antibiotic("Amoxilin", "ABC Pharma", "2024-12-01", "Broad");
+        Antibiotic amoxicillin = new Antibiotic("Amoxicillin", "ABC Pharma", "2024-12-01", "Broad");
         Analgesic ibruprofen = new Analgesic("Ibuprofen", "XYZ Pharma", "2024-05-15", "Acute");
         Antibiotic ciprofloxacin = new Antibiotic("Ciprofloxacin", "123 Pharma", "2023-06-15", "Broad");
         Analgesic paracetamol = new Analgesic("Paracetamol", "456 Pharma", "2025-09-30", "General");
@@ -14,7 +14,7 @@ public class Main {
         PharmaControl pharmaControl = new PharmaControl();
 
        // Add medicines to inventory
-        pharmaControl.addToInventory(amoxilin);
+        pharmaControl.addToInventory(amoxicillin);
         pharmaControl.addToInventory(paracetamol);
         pharmaControl.addToInventory(ciprofloxacin);
         pharmaControl.addToInventory(ibruprofen);
@@ -23,7 +23,7 @@ public class Main {
         System.out.println();
         // Search for medicine
         System.out.println("Search Results for Amoxicillin:");
-        pharmaControl.searchInInventory("Amoxilin");
+        pharmaControl.searchInInventory("Amoxicillin");
 
         System.out.println();
         // Remove medicine
