@@ -50,7 +50,9 @@ public class Main {
                    2. Remove Medicine from Inventory
                    3. Search Medicine
                    4. Generate Report
-                   5. Exit Program
+                   5. Issue Medicine
+                   6. Restock Medicine
+                   7. Exit Program
                     """);
             System.out.println("Enter your choice: ");
             int choice = sc.nextInt();
@@ -83,11 +85,13 @@ public class Main {
                         pharmaControl.addToInventory(a2);
                     }
                     break;
+
                     case 2:
                         System.out.println("Enter Medicine Name: ");
                         String medName2 = sc.nextLine();
                         pharmaControl.removeFromInventory(medName2);
                         break;
+
                         case 3:
                             System.out.println("Enter Medicine Name: ");
                             String medName3 = sc.nextLine();
@@ -97,8 +101,42 @@ public class Main {
                                 pharmaControl.generateReport();
                                 break;
                                 case 5:
-                                    System.out.println("Exit Program");
+                                    System.out.println("Enter Medicine Name To Issue: ");
+                                    String medName4 = sc.nextLine();
+                                    pharmaControl.issueMedicine(medName4);
                                     break;
+
+                case 6:
+                    System.out.println("Enter medicine details you want to restock");
+                    System.out.println("Enter\n 1 for Antibiotic\n 2 for Analgesic");
+                    int type2 = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.println("Enter Medicine Name: ");
+                    String medName5 = sc.nextLine();
+                    System.out.println("Enter Manufacturer: ");
+                    String manufacturer5 = sc.nextLine();
+                    System.out.println("Enter Expiry Date (YYYY-MM-DD): ");
+                    String expiryDate5 = sc.nextLine();
+
+                    if (type2 == 1) {
+                        System.out.println("Enter Spectrum");
+                        String spectrum = sc.nextLine();
+                        Antibiotic a = new Antibiotic(medName5, manufacturer5, expiryDate5, spectrum);
+                        pharmaControl.restokeMedicine(a);
+                    }
+                    else if (type2 == 2) {
+                        System.out.println("Enter pain type");
+                        String painType = sc.nextLine();
+                        Analgesic a2 = new Analgesic(medName5, manufacturer5, expiryDate5, painType);
+                        pharmaControl.addToInventory(a2);
+                    }
+                    break;
+
+
+                case 7:
+                    System.out.println("Exit Program");
+                    break;
                                     default:
                                         System.out.println("Invalid choice");
                                         break;
