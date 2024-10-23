@@ -25,7 +25,6 @@ public class PharmaControl {
     }
 
 
-
     public void removeFromInventory(String medicine) {
         for (int i = 0; i < Inventorycount; i++) {
             if(pharmaceutical[i] != null && pharmaceutical[i].getMedName().equalsIgnoreCase(medicine)){

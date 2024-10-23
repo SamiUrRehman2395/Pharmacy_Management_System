@@ -6,6 +6,7 @@ public class Analgesic extends Pharmaceutical implements Classifiable{
 Analgesic(String medName, String manufacturer, String expiryDate, String painType){
     super(medName, manufacturer, expiryDate, StockStatus.IN_STOCK);
     this.painType = painType;
+    
 }
 
     @Override

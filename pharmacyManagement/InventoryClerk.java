@@ -13,7 +13,8 @@ public class InventoryClerk {
         processedMedicine = new Pharmaceutical[10];
     }
 
-    public void handleDuplicateMedicine(Pharmaceutical medicine) {
+    public void handleDuplicateMedicine(Pharmaceutical medicine)
+    {
         System.out.println("Medicine already exists");
     }
 
