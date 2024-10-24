@@ -11,28 +11,28 @@ public class Main {
         Analgesic paracetamol = new Analgesic("Paracetamol", "456 Pharma", "2025-09-30", "General");
         Antibiotic erythromycin = new Antibiotic("Erythromycin", "789 Pharma", "2023-09-25", "Broad");
 
-        PharmaControl pharmaControl = new PharmaControl();
+//        PharmaControl pharmaControl = new PharmaControl();
 
        // Add medicines to inventory
-        pharmaControl.addToInventory(amoxicillin);
-        pharmaControl.addToInventory(paracetamol);
-        pharmaControl.addToInventory(ciprofloxacin);
-        pharmaControl.addToInventory(ibruprofen);
-        pharmaControl.addToInventory(erythromycin);
+        PharmaControl.addToInventory(amoxicillin);
+        PharmaControl.addToInventory(paracetamol);
+        PharmaControl.addToInventory(ciprofloxacin);
+        PharmaControl.addToInventory(ibruprofen);
+        PharmaControl.addToInventory(erythromycin);
 
         System.out.println();
         // Search for medicine
         System.out.println("Search Results for Amoxicillin:");
-        pharmaControl.searchInInventory("Amoxicillin");
+        PharmaControl.searchInInventory("Amoxicillin");
 
         System.out.println();
         // Remove medicine
-        pharmaControl.removeFromInventory("Ibuprofen");
+        PharmaControl.removeFromInventory("Ibuprofen");
 
         System.out.println();
         // Search for removed medicine
         System.out.println("Search Results for Ibuprofen:");
-        pharmaControl.searchInInventory("Ibuprofen");
+        PharmaControl.searchInInventory("Ibuprofen");
 
 
         System.out.println("\n");
@@ -76,34 +76,34 @@ public class Main {
                         System.out.println("Enter Spectrum");
                         String spectrum = sc.nextLine();
                         Antibiotic a = new Antibiotic(medName, manufacturer, expiryDate, spectrum);
-                        pharmaControl.addToInventory(a);
+                        PharmaControl.addToInventory(a);
                     }
                     else if (type == 2) {
                         System.out.println("Enter pain type");
                         String painType = sc.nextLine();
                         Analgesic a2 = new Analgesic(medName, manufacturer, expiryDate, painType);
-                        pharmaControl.addToInventory(a2);
+                        PharmaControl.addToInventory(a2);
                     }
                     break;
 
                     case 2:
                         System.out.println("Enter Medicine Name: ");
                         String medName2 = sc.nextLine();
-                        pharmaControl.removeFromInventory(medName2);
+                        PharmaControl.removeFromInventory(medName2);
                         break;
 
                         case 3:
                             System.out.println("Enter Medicine Name: ");
                             String medName3 = sc.nextLine();
-                            pharmaControl.searchInInventory(medName3);
+                            PharmaControl.searchInInventory(medName3);
                             break;
                             case 4:
-                                pharmaControl.generateReport();
+                                PharmaControl.generateReport();
                                 break;
                                 case 5:
                                     System.out.println("Enter Medicine Name To Issue: ");
                                     String medName4 = sc.nextLine();
-                                    pharmaControl.issueMedicine(medName4);
+                                    PharmaControl.issueMedicine(medName4);
                                     break;
 
                 case 6:
@@ -123,13 +123,13 @@ public class Main {
                         System.out.println("Enter Spectrum");
                         String spectrum = sc.nextLine();
                         Antibiotic a = new Antibiotic(medName5, manufacturer5, expiryDate5, spectrum);
-                        pharmaControl.restokeMedicine(a);
+                        PharmaControl.restokeMedicine(a);
                     }
                     else if (type2 == 2) {
                         System.out.println("Enter pain type");
                         String painType = sc.nextLine();
                         Analgesic a2 = new Analgesic(medName5, manufacturer5, expiryDate5, painType);
-                        pharmaControl.addToInventory(a2);
+                        PharmaControl.addToInventory(a2);
                     }
                     break;
 

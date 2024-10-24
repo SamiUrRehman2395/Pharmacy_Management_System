@@ -2,11 +2,11 @@ package pharmacyManagement;
 
 public class PharmaControl {
 
-    Pharmaceutical[] pharmaceutical = new Pharmaceutical[10];
+    static Pharmaceutical[] pharmaceutical = new Pharmaceutical[10];
 
-    private int Inventorycount = 0;
+    private static int Inventorycount = 0;
 
-    public void addToInventory(Pharmaceutical medicine) {
+    public static void addToInventory(Pharmaceutical medicine) {
 
         if (Inventorycount >= pharmaceutical.length){
             System.out.println("Cannot add this medicine. Inventory is full");
@@ -25,7 +25,7 @@ public class PharmaControl {
     }
 
 
-    public void removeFromInventory(String medicine) {
+    public static void removeFromInventory(String medicine) {
         for (int i = 0; i < Inventorycount; i++) {
             if(pharmaceutical[i] != null && pharmaceutical[i].getMedName().equalsIgnoreCase(medicine)){
                 for (int j = i; j < Inventorycount -1; j++) {
@@ -48,7 +48,7 @@ public class PharmaControl {
 
 
     }
-    public void searchInInventory(String medicine) {
+    public static void searchInInventory(String medicine) {
 
         for(int i = 0; i < Inventorycount; i++){
             if(pharmaceutical[i] != null && pharmaceutical[i].getMedName().equalsIgnoreCase(medicine)){
@@ -62,7 +62,7 @@ public class PharmaControl {
         System.out.println("Medicine not found");
 
     }
-    public void issueMedicine(String medicine) {
+    public static void issueMedicine(String medicine) {
         for(int i = 0; i < Inventorycount; i++){
             if(pharmaceutical[i] != null && pharmaceutical[i].getMedName().equalsIgnoreCase(medicine)){
 
@@ -82,7 +82,7 @@ public class PharmaControl {
         System.out.println("Medicine not found");
 
     }
-    public void restokeMedicine(Pharmaceutical medicine) {
+    public static void restokeMedicine(Pharmaceutical medicine) {
         for(int i = 0; i < Inventorycount; i++){
             if(pharmaceutical[i].IsEquivalent(medicine)){
                 System.out.println("Medicine Already Exists.");
@@ -94,7 +94,7 @@ public class PharmaControl {
 
 
     }
-    public void generateReport(){
+    public static void generateReport(){
 
             if(Inventorycount ==0){
                 System.out.println("Inventory Is Empty");
